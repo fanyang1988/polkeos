@@ -1,0 +1,54 @@
+[package]
+name = "bridge-eos"
+version = "0.1.0"
+authors = ["Fan Yang <fanyang.coder@gmail.com>"]
+edition = "2018"
+
+[features]
+default = ['std']
+std = [
+    'serde',
+    'parity-codec/std',
+    'support/std',
+    'system/std',
+]
+
+[dependencies.serde]
+features = ['derive']
+optional = true
+version = '1.0'
+
+[dependencies.parity-codec]
+default-features = false
+features = ['derive']
+version = '3.5'
+
+[dependencies.support]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'srml-support'
+rev = 'cc1d67e973fd02c0c997b164ba516cf041bf21f1'
+
+[dependencies.system]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'srml-system'
+rev = 'cc1d67e973fd02c0c997b164ba516cf041bf21f1'
+
+[dependencies.primitives]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'substrate-primitives'
+rev = 'cc1d67e973fd02c0c997b164ba516cf041bf21f1'
+
+[dependencies.runtime-primitives]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'sr-primitives'
+rev = 'cc1d67e973fd02c0c997b164ba516cf041bf21f1'
+
+[dependencies.runtime-io]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'sr-io'
+rev = 'cc1d67e973fd02c0c997b164ba516cf041bf21f1'
